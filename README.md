@@ -9,11 +9,10 @@ This tool is especially useful for determining how abstracted or controlled an i
 ## Features
 
 * **Unified Input**: Accepts a domain or IP address in one input field.
-* **Automatic IP Resolution**: Resolves domains to IPs without extra steps.
+* **Automatic IP Resolution**: Resolves domains to IPs automatically.
 * **Infrastructure Profiling**: Classifies targets by scale, abstraction, and control likelihood.
 * **Effort Recommendation**: Suggests whether to prioritize application-layer or infrastructure-level assessments.
-* **Color-Coded Terminal Output**: Clear, professional, and easy-to-read results.
-* **HR-Ready UX**: Clean, polished output suitable for demoing to hiring managers.
+* **Color-Coded Output**: Uses emoji badges to indicate green/yellow/red for readability on GitHub.
 
 ---
 
@@ -51,22 +50,24 @@ You will see:
 Enter a domain or IP address (or 'exit')
 ```
 
-### Example Usage
+---
+
+## Example Usage
 
 #### Domain Example: `google.com`
 
 ```
-Target: google.com
-Resolved IP: 216.58.223.78
+Target              : google.com
+Resolved IP         : 216.58.223.78
 
 Infrastructure Profile
- - Scale             : GREEN large
- - Abstraction       : GREEN high
- - Control Likelihood: RED low
+ - Scale             : 🟩 large
+ - Abstraction       : 🟩 high
+ - Control Likelihood: 🟥 low
 
 Recommendation
- → Priority          : GREEN application-layer
- → Confidence        : GREEN high
+ → Priority          : 🟩 application-layer
+ → Confidence        : 🟩 high
  → Rationale:
     - Large-scale managed infrastructure detected
     - Infrastructure is abstracted behind shared control planes
@@ -78,17 +79,17 @@ Disclaimer: Output is contextual and advisory only.
 #### IP Example: `197.243.26.224`
 
 ```
-Target: 197.243.26.224
-Resolved IP: 197.243.26.224
+Target              : 197.243.26.224
+Resolved IP         : 197.243.26.224
 
 Infrastructure Profile
- - Scale             : YELLOW small
- - Abstraction       : YELLOW low
- - Control Likelihood: GREEN higher
+ - Scale             : 🟨 small
+ - Abstraction       : 🟨 low
+ - Control Likelihood: 🟩 higher
 
 Recommendation
- → Priority          : YELLOW infrastructure-relevant
- → Confidence        : YELLOW medium
+ → Priority          : 🟨 infrastructure-relevant
+ → Confidence        : 🟨 medium
  → Rationale:
     - No evidence of hyperscaler or CDN abstraction
     - Infrastructure characteristics suggest direct exposure
@@ -97,7 +98,10 @@ Recommendation
 Disclaimer: Output is contextual and advisory only.
 ```
 
-> **Note:** In your terminal, colors are rendered using **colorama** (green, yellow, red).
+> **Legend:**
+> 🟩 = High confidence / green
+> 🟨 = Medium confidence / yellow
+> 🟥 = Low confidence / red
 
 ---
 
@@ -119,8 +123,8 @@ Disclaimer: Output is contextual and advisory only.
 
 ## Why This Tool Exists
 
-* Many modern services are hosted on **managed clouds** (AWS, Google, Azure, Cloudflare) where infrastructure attacks are impractical for small-scale testing.
-* **ContextLens prioritizes your effort**, showing when it’s worth focusing on infrastructure versus application-layer logic.
+* Modern services are often hosted on **managed clouds** (AWS, Google, Azure, Cloudflare) where infrastructure attacks are impractical for small-scale testing.
+* **ContextLens prioritizes your effort**, showing when it’s worth focusing on infrastructure versus application-layer issues.
 * Saves time, reduces noise, and allows security professionals or developers to focus on what matters.
 
 ---
@@ -159,6 +163,6 @@ This project is released under the **MIT License**. See [LICENSE](LICENSE) for d
 
 ## About the Author
 
-This tool demonstrates **practical decision-making** in security assessment and **efficient analysis of targets**. Perfect for showcasing on GitHub to hiring managers or security-focused audiences.
+This tool demonstrates **practical decision-making** in security assessment and **efficient analysis of targets**. 
 
----
+
