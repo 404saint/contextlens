@@ -159,10 +159,5 @@ Disclaimer: Output is contextual and advisory only.
 
 This project is released under the **MIT License**. See [LICENSE](LICENSE) for details.
 
----
-
-## About the Author
-
-This tool demonstrates **practical decision-making** in security assessment and **efficient analysis of targets**. 
 
 
