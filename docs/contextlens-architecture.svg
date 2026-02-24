@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1502pt" height="209pt" viewBox="0.00 0.00 1501.84 209.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 205)">
+<title>ContextLens</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-205 1497.8372,-205 1497.8372,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_heuristics</title>
+<polygon fill="none" stroke="#0000ff" stroke-dasharray="5,2" points="8,-8 8,-193 476.3716,-193 476.3716,-8 8,-8"/>
+<text text-anchor="middle" x="242.1858" y="-176.4" font-family="Times,serif" font-size="14.00" fill="#000000">Heuristic Analysis</text>
+</g>
+<!-- Input -->
+<g id="node1" class="node">
+<title>Input</title>
+<polygon fill="#d3d3d3" stroke="#d3d3d3" points="1175.4544,-77.6019 1068.4656,-77.6019 1068.4656,-36.3981 1175.4544,-36.3981 1175.4544,-77.6019"/>
+<text text-anchor="middle" x="1121.96" y="-61.2" font-family="Arial" font-size="14.00" fill="#000000">User Input</text>
+<text text-anchor="middle" x="1121.96" y="-44.4" font-family="Arial" font-size="14.00" fill="#000000">(Domain or IP)</text>
+</g>
+<!-- Detection -->
+<g id="node2" class="node">
+<title>Detection</title>
+<polygon fill="#d3d3d3" stroke="#d3d3d3" points="1322.6739,-77.6019 1212.3849,-77.6019 1212.3849,-36.3981 1322.6739,-36.3981 1322.6739,-77.6019"/>
+<text text-anchor="middle" x="1267.5294" y="-61.2" font-family="Arial" font-size="14.00" fill="#000000">Input Detection</text>
+<text text-anchor="middle" x="1267.5294" y="-44.4" font-family="Arial" font-size="14.00" fill="#000000">(IP or Domain)</text>
+</g>
+<!-- Input&#45;&gt;Detection -->
+<g id="edge1" class="edge">
+<title>Input-&gt;Detection</title>
+<path fill="none" stroke="#000000" d="M1175.7511,-57C1184.2501,-57 1193.1205,-57 1201.8532,-57"/>
+<polygon fill="#000000" stroke="#000000" points="1202.0108,-60.5001 1212.0108,-57 1202.0107,-53.5001 1202.0108,-60.5001"/>
+</g>
+<!-- Resolution -->
+<g id="node3" class="node">
+<title>Resolution</title>
+<polygon fill="#d3d3d3" stroke="#d3d3d3" points="1493.9552,-101.6019 1359.4836,-101.6019 1359.4836,-60.3981 1493.9552,-60.3981 1493.9552,-101.6019"/>
+<text text-anchor="middle" x="1426.7194" y="-85.2" font-family="Arial" font-size="14.00" fill="#000000">Domain Resolution</text>
+<text text-anchor="middle" x="1426.7194" y="-68.4" font-family="Arial" font-size="14.00" fill="#000000">(to IP)</text>
+</g>
+<!-- Detection&#45;&gt;Resolution -->
+<g id="edge2" class="edge">
+<title>Detection-&gt;Resolution</title>
+<path fill="none" stroke="#000000" d="M1322.7596,-65.3267C1331.372,-66.6251 1340.4056,-67.9871 1349.4005,-69.3431"/>
+<polygon fill="#000000" stroke="#000000" points="1349.1049,-72.8381 1359.5149,-70.868 1350.1485,-65.9163 1349.1049,-72.8381"/>
+</g>
+<!-- Heuristic -->
+<g id="node4" class="node">
+<title>Heuristic</title>
+<polygon fill="#d3d3d3" stroke="#d3d3d3" points="468.4867,-108.6019 257.0265,-108.6019 257.0265,-67.3981 468.4867,-67.3981 468.4867,-108.6019"/>
+<text text-anchor="middle" x="362.7566" y="-92.2" font-family="Arial" font-size="14.00" fill="#000000">Heuristic Infrastructure Profiling</text>
+<text text-anchor="middle" x="362.7566" y="-75.4" font-family="Arial" font-size="14.00" fill="#000000">(Scale, Abstraction, Control)</text>
+</g>
+<!-- Resolution&#45;&gt;Heuristic -->
+<g id="edge3" class="edge">
+<title>Resolution-&gt;Heuristic</title>
+<path fill="none" stroke="#000000" d="M1359.3065,-96.3343C1331.1028,-101.5092 1297.8832,-106 1267.5294,-106 612.9403,-106 612.9403,-106 612.9403,-106 568.997,-106 520.8238,-103.2032 478.5832,-99.8145"/>
+<polygon fill="#000000" stroke="#000000" points="478.7969,-96.3203 468.5437,-98.9892 478.2233,-103.2968 478.7969,-96.3203"/>
+</g>
+<!-- Recommendation -->
+<g id="node5" class="node">
+<title>Recommendation</title>
+<polygon fill="#d3d3d3" stroke="#d3d3d3" points="720.5777,-77.6019 505.3029,-77.6019 505.3029,-36.3981 720.5777,-36.3981 720.5777,-77.6019"/>
+<text text-anchor="middle" x="612.9403" y="-61.2" font-family="Arial" font-size="14.00" fill="#000000">Recommendation Generation</text>
+<text text-anchor="middle" x="612.9403" y="-44.4" font-family="Arial" font-size="14.00" fill="#000000">(Priority, Confidence, Guidance)</text>
+</g>
+<!-- Heuristic&#45;&gt;Recommendation -->
+<g id="edge4" class="edge">
+<title>Heuristic-&gt;Recommendation</title>
+<path fill="none" stroke="#000000" d="M468.4944,-74.8981C477.3118,-73.8056 486.2608,-72.6967 495.1602,-71.594"/>
+<polygon fill="#000000" stroke="#000000" points="495.6835,-75.056 505.1772,-70.3528 494.8227,-68.1091 495.6835,-75.056"/>
+</g>
+<!-- Output -->
+<g id="node6" class="node">
+<title>Output</title>
+<polygon fill="#d3d3d3" stroke="#d3d3d3" points="898.8794,-77.6019 757.3854,-77.6019 757.3854,-36.3981 898.8794,-36.3981 898.8794,-77.6019"/>
+<text text-anchor="middle" x="828.1324" y="-61.2" font-family="Arial" font-size="14.00" fill="#000000">Color-Coded Output</text>
+<text text-anchor="middle" x="828.1324" y="-44.4" font-family="Arial" font-size="14.00" fill="#000000">(Emoji / Terminal)</text>
+</g>
+<!-- Recommendation&#45;&gt;Output -->
+<g id="edge5" class="edge">
+<title>Recommendation-&gt;Output</title>
+<path fill="none" stroke="#000000" d="M720.5364,-57C729.5235,-57 738.5106,-57 747.2469,-57"/>
+<polygon fill="#000000" stroke="#000000" points="747.3724,-60.5001 757.3724,-57 747.3724,-53.5001 747.3724,-60.5001"/>
+</g>
+<!-- Output&#45;&gt;Input -->
+<g id="edge6" class="edge">
+<title>Output-&gt;Input</title>
+<path fill="none" stroke="#c0c0c0" stroke-dasharray="5,2" d="M898.8853,-57C947.4536,-57 1011.3714,-57 1058.3335,-57"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" points="1058.3845,-60.5001 1068.3845,-57 1058.3844,-53.5001 1058.3845,-60.5001"/>
+<text text-anchor="middle" x="983.6093" y="-61.2" font-family="Times,serif" font-size="14.00" fill="#000000">Analyze another target?</text>
+</g>
+<!-- Scale -->
+<g id="node7" class="node">
+<title>Scale</title>
+<polygon fill="#ffffff" stroke="#d3d3d3" points="164.7055,-160 33.4361,-160 33.4361,-124 164.7055,-124 164.7055,-160"/>
+<text text-anchor="middle" x="99.0708" y="-137.8" font-family="Arial" font-size="14.00" fill="#000000">Scale Assessment</text>
+</g>
+<!-- Scale&#45;&gt;Heuristic -->
+<g id="edge7" class="edge">
+<title>Scale-&gt;Heuristic</title>
+<path fill="none" stroke="#000000" d="M164.9297,-128.5128C191.3118,-123.11 222.4433,-116.7346 252.1053,-110.6602"/>
+<polygon fill="#000000" stroke="#000000" points="253.0047,-114.0487 262.0992,-108.6135 251.6003,-107.191 253.0047,-114.0487"/>
+</g>
+<!-- Abstraction -->
+<g id="node8" class="node">
+<title>Abstraction</title>
+<polygon fill="#ffffff" stroke="#d3d3d3" points="182.2125,-106 15.9291,-106 15.9291,-70 182.2125,-70 182.2125,-106"/>
+<text text-anchor="middle" x="99.0708" y="-83.8" font-family="Arial" font-size="14.00" fill="#000000">Abstraction Assessment</text>
+</g>
+<!-- Abstraction&#45;&gt;Heuristic -->
+<g id="edge8" class="edge">
+<title>Abstraction-&gt;Heuristic</title>
+<path fill="none" stroke="#000000" d="M182.5026,-88C202.9525,-88 225.2068,-88 246.8772,-88"/>
+<polygon fill="#000000" stroke="#000000" points="247.1197,-91.5001 257.1197,-88 247.1197,-84.5001 247.1197,-91.5001"/>
+</g>
+<!-- Control -->
+<g id="node9" class="node">
+<title>Control</title>
+<polygon fill="#ffffff" stroke="#d3d3d3" points="163.089,-52 35.0526,-52 35.0526,-16 163.089,-16 163.089,-52"/>
+<text text-anchor="middle" x="99.0708" y="-29.8" font-family="Arial" font-size="14.00" fill="#000000">Control Likelihood</text>
+</g>
+<!-- Control&#45;&gt;Heuristic -->
+<g id="edge9" class="edge">
+<title>Control-&gt;Heuristic</title>
+<path fill="none" stroke="#000000" d="M163.2384,-47.1408C189.8775,-52.5962 221.5739,-59.0873 251.7723,-65.2716"/>
+<polygon fill="#000000" stroke="#000000" points="251.4477,-68.7777 261.9466,-67.3552 252.8521,-61.92 251.4477,-68.7777"/>
+</g>
+</g>
+</svg>
