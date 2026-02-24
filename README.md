@@ -1,33 +1,82 @@
 # ContextLens v1
 
-**ContextLens** is a decision-support tool for security practitioners, developers, and auditors. It helps prioritize effort by analyzing a domain or IP address and providing a contextual recommendation: whether to focus on **application-layer assessments** or **infrastructure-level evaluation**.
+![Python](https://img.shields.io/badge/language-Python-3776AB?logo=python\&logoColor=white)
+![License](https://img.shields.io/github/license/404saint/contextlens)
+![Status](https://img.shields.io/badge/status-active%20development-blue)
+![Use Case](https://img.shields.io/badge/use--case-security%20decision--support-critical)
 
-This tool is especially useful for determining how abstracted or controlled an infrastructure is, helping save time and effort during security assessments.
+**ContextLens** is a decision-support tool for security practitioners, developers, and auditors. It analyzes a domain or IP and provides **contextual recommendations** on whether to focus on **application-layer assessments** or **infrastructure-level evaluation**.
+
+This helps teams **prioritize effort**, save time, and reduce unnecessary noise during security assessments.
 
 ---
 
 ## Features
 
-* **Unified Input**: Accepts a domain or IP address in one input field.
+* **Unified Input**: Accepts a domain or IP address.
 * **Automatic IP Resolution**: Resolves domains to IPs automatically.
 * **Infrastructure Profiling**: Classifies targets by scale, abstraction, and control likelihood.
 * **Effort Recommendation**: Suggests whether to prioritize application-layer or infrastructure-level assessments.
-* **Color-Coded Output**: Uses emoji badges to indicate green/yellow/red for readability on GitHub.
+* **Color-Coded Output**: Emoji-based indicators for quick readability on GitHub.
+
+---
+
+## Architecture Overview
+
+<p align="center">
+  <img src="docs/contextlens-architecture.svg" alt="ContextLens execution flow diagram" width="2500">
+</p>
+
+---
+
+## Architecture Explanation
+
+### 1. Input Detection
+
+* Determines if the input is a **domain** or **IP address**.
+* Validates format and readiness for analysis.
+
+### 2. Domain Resolution
+
+* Converts domains to their corresponding IP addresses.
+* Ensures a unified representation for further analysis.
+
+### 3. Heuristic Infrastructure Profiling
+
+* Checks for hyperscaler/CDN patterns (AWS, Azure, Google, Cloudflare, Akamai, Fastly, etc.).
+* Classifies infrastructure across three dimensions:
+
+  * **Scale** (small ↔ large)
+  * **Abstraction** (low ↔ high)
+  * **Control Likelihood** (low ↔ high)
+
+### 4. Recommendation Generation
+
+* Suggests **priority**: application-layer vs infrastructure-level.
+* Provides **confidence** and **guidance**.
+* Explains rationale based on detected heuristics.
+
+### 5. Color-Coded Output
+
+* Uses **green/yellow/red indicators** for readability.
+* Supports rapid comprehension of security posture.
+* Includes advisory disclaimers.
+
+---
+
+## Why ContextLens Exists
+
+* Modern infrastructure often hides behind **managed clouds** and CDNs.
+* Blind infrastructure-level testing can waste time on abstracted or shared environments.
+* ContextLens **prioritizes security effort**, reducing wasted work and focusing on areas with the most meaningful impact.
 
 ---
 
 ## Installation
 
-1. Clone the repository:
-
 ```bash
 git clone https://github.com/404saint/contextlens.git
 cd contextlens
-```
-
-2. Install required Python packages:
-
-```bash
 pip3 install colorama
 ```
 
@@ -37,104 +86,65 @@ pip3 install colorama
 
 ## Usage
 
-Run ContextLens:
-
 ```bash
 python3 contextlens.py
 ```
 
-You will see:
+**Workflow:**
 
-```
-=== ContextLens v1 ===
-Enter a domain or IP address (or 'exit')
-```
-
----
+1. Enter a **domain or IP**.
+2. Receive a **contextual infrastructure profile**.
+3. Get **effort recommendation**, confidence, and rationale.
 
 ## Example Usage
 
 #### Domain Example: `google.com`
 
-```
-Target              : google.com
-Resolved IP         : 216.58.223.78
+```markdown
+Target              : google.com  
+Resolved IP         : 216.58.223.78  
 
 Infrastructure Profile
- - Scale             : 🟩 large
- - Abstraction       : 🟩 high
- - Control Likelihood: 🟥 low
+ - Scale             : large
+ - Abstraction       : high
+ - Control Likelihood: low
 
 Recommendation
- → Priority          : 🟩 application-layer
- → Confidence        : 🟩 high
+ → Priority          : application-layer
+ → Confidence        : high
  → Rationale:
     - Large-scale managed infrastructure detected
     - Infrastructure is abstracted behind shared control planes
  → Guidance          : Focus on application logic, configuration, and integration boundaries
-
-Disclaimer: Output is contextual and advisory only.
 ```
 
 #### IP Example: `197.243.26.224`
 
-```
-Target              : 197.243.26.224
-Resolved IP         : 197.243.26.224
+```markdown
+Target              : 197.243.26.224  
+Resolved IP         : 197.243.26.224  
 
 Infrastructure Profile
- - Scale             : 🟨 small
- - Abstraction       : 🟨 low
- - Control Likelihood: 🟩 higher
+ - Scale             : small
+ - Abstraction       : low
+ - Control Likelihood: higher
 
 Recommendation
- → Priority          : 🟨 infrastructure-relevant
- → Confidence        : 🟨 medium
+ → Priority          : infrastructure-relevant
+ → Confidence        : medium
  → Rationale:
     - No evidence of hyperscaler or CDN abstraction
     - Infrastructure characteristics suggest direct exposure
  → Guidance          : Infrastructure-level assessment may be a rational use of effort
-
-Disclaimer: Output is contextual and advisory only.
 ```
-
-> **Legend:**
-> 🟩 = High confidence / green
-> 🟨 = Medium confidence / yellow
-> 🟥 = Low confidence / red
-
----
-
-## How It Works
-
-1. **Input Detection**: Automatically determines if the input is an IP or domain.
-2. **Domain Resolution**: Converts domain names to IP addresses.
-3. **Heuristic Analysis**:
-
-   * Detects hyperscaler/CDN patterns for abstraction assessment.
-   * Assigns scale, abstraction, and control likelihood values.
-4. **Recommendation Generation**:
-
-   * Suggests whether to focus on application or infrastructure.
-   * Provides rationale and guidance for decision-making.
-5. **Color-Coded Output**: Highlights key metrics and recommendations for readability.
-
----
-
-## Why This Tool Exists
-
-* Modern services are often hosted on **managed clouds** (AWS, Google, Azure, Cloudflare) where infrastructure attacks are impractical for small-scale testing.
-* **ContextLens prioritizes your effort**, showing when it’s worth focusing on infrastructure versus application-layer issues.
-* Saves time, reduces noise, and allows security professionals or developers to focus on what matters.
-
 ---
 
 ## Technologies
 
 * **Python 3**
-* **colorama** for terminal color output
+* **colorama** for terminal colors
 * **socket** for DNS/IP resolution
-* Simple heuristics for infrastructure assessment
+* Heuristic scoring for infrastructure abstraction
 
 ---
 
@@ -142,22 +152,19 @@ Disclaimer: Output is contextual and advisory only.
 
 * IPv6 support
 * Multi-A record and load-balanced domain handling
-* Integration with public ASN databases for precise IP scoring
+* Integration with public ASN databases for precise scoring
 * Optional JSON output for automation pipelines
 
 ---
 
-## Disclaimer
+## Ethical Use & Disclaimer
 
-* ContextLens **does not perform any attacks**.
-* All output is **advisory only**, intended to help prioritize assessment effort.
-* Use responsibly and legally. Respect the boundaries of external systems.
+* **No attacks performed**.
+* **Advisory output only**.
+* Use responsibly and legally. Respect external system boundaries.
 
 ---
 
 ## License
 
-This project is released under the **MIT License**. See [LICENSE](LICENSE) for details.
-
-
-
+MIT License — see [LICENSE](LICENSE) for details.
