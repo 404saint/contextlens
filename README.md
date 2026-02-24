@@ -24,7 +24,7 @@ This helps teams **prioritize effort**, save time, and reduce unnecessary noise 
 ## Architecture Overview
 
 <p align="center">
-  <img src="docs/contextlens-architecture.svg" alt="ContextLens execution flow diagram" width="2500">
+  <img src="docs/contextlens-architecture.png" alt="ContextLens execution flow diagram" width="900">
 </p>
 
 ---
